@@ -39,7 +39,7 @@ serviceWeather(city.value, days.value)
 function serviceWeather(city, days) {
     const BASE_URL = "http://api.weatherapi.com/v1";
     const END_POINT = "/forecast.json";
-    const API_KEY = "6f3bf7a06a84400a8c1181835232108";
+    const API_KEY = "6410346f89264d6e919165208231505";
 
     const params = new URLSearchParams({
         key: API_KEY,
