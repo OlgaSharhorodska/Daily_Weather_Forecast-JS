@@ -51,7 +51,8 @@ function serviceWeather(city, days) {
         .then(resp => {
             if (!resp.ok) {
         throw new Error(resp.statusText)
-    }
+            }
+            return resp.json()
 })
 
 }
