@@ -34,6 +34,7 @@ function handlerSearch(event) {
     const { city, days } = event.currentTarget.elements;
 }
 
+serviceWeather(city.value, days.value)
 
 function serviceWeather(city, days) {
     const BASE_URL = "http://api.weatherapi.com/v1";
