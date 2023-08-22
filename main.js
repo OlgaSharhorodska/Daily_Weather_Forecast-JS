@@ -31,5 +31,5 @@ elements.searhForm.addEventListener('submit', handlerSearch)
 function handlerSearch(event) {
     event.preventDefault();
      
-    const {city, days} = event.currentTarget.elements
+    const { city, days } = event.currentTarget.elements;
 }
