@@ -22,40 +22,44 @@
 
 
 const elements = {
-    searhForm: document.querySelector('.js-search-form'),
-    list: document.querySelector('.js-list')
+  searchForm: document.querySelector(".js-search-form"),
+  list: document.querySelector(".js-list"),
+};
+
+elements.searchForm.addEventListener("submit", handlerSearch);
+
+function handlerSearch(evt) {
+  evt.preventDefault();
+  const { city, days } = evt.currentTarget.elements;
+
+  serviceWeather(city.value, days.value)
+  .then(data => elements.list.innerHTML = createMarkup(data.forecast.forecastday))
+  .catch(err => console.log(err))
+  .finally(() => evt.target.reset())
 }
-
-elements.searhForm.addEventListener('submit', handlerSearch)
-
-function handlerSearch(event) {
-    event.preventDefault();
-     
-    const { city, days } = event.currentTarget.elements;
-}
-
-serviceWeather(city.value,days.value).then(data => console.log(data)).catch(err=>console.log(err))
 
 function serviceWeather(city, days) {
-    const BASE_URL = "http://api.weatherapi.com/v1";
-    const END_POINT = "/forecast.json";
-    const API_KEY = "6410346f89264d6e919165208231505";
+  const BASE_URL = "http://api.weatherapi.com/v1";
+  const END_POINT = "/forecast.json";
+  const API_KEY = "6410346f89264d6e919165208231505";
 
-    const params = new URLSearchParams({
-        key: API_KEY,
-        q: city,
-        days: days,
-        lang: "en",
-    });
+  const params = new URLSearchParams({
+    key: API_KEY,
+    q: city,
+    days: days,
+    lang: "uk",
+  });
 
-    fetch(`${BASE_URL}${END_POINT}?${params}`)
-        .then(resp => {
-            if (!resp.ok) {
-        throw new Error(resp.statusText)
-            }
-            return resp.json()
-})
+  return fetch(`${BASE_URL}${END_POINT}?${params}`).then((resp) => {
 
+    if (!resp.ok) {
+      throw new Error(resp.statusText);
+    }
+
+    return resp.json();
+  });
+
+  // fetch(`${BASE_URL}${END_POINT}?key=${API_KEY}&q=${city}&days=${days}&lang=uk`)
 }
 
 function createMarkup(arr){
@@ -66,5 +70,3 @@ return arr.map(({date, day : {avgtemp_c , condition : {icon, text}}}) => `<li cl
     <h3 class="temperature">${avgtemp_c} °C</h3>
 </li>`).join('')
 }
-
-
