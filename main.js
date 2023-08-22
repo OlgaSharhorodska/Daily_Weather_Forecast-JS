@@ -19,3 +19,17 @@
 // Приклад картки https://prnt.sc/h_p-A6Hty-i-
 
 // !!! ЗВЕРНИ УВАГУ ЩО API_KEY ПІСЛЯ РЕЄСТРАЦІЇ ВАЛІДНИЙ 21 ДЕНЬ !!!.
+
+
+const elements = {
+    searhForm: document.querySelector('.js-search-form'),
+    list: document.querySelector('.js-list')
+}
+
+elements.searhForm.addEventListener('submit', handlerSearch)
+
+function handlerSearch(event) {
+    event.preventDefault();
+     
+    const {city, days} = event.currentTarget.elements
+}
