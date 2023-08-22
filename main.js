@@ -46,6 +46,9 @@ function serviceWeather(city, days) {
         days: days,
         lang: "en",
     });
+
+fetch(`${BASE_URL}${END_POINT}?${params}`)
+
 }
 
 
