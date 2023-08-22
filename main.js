@@ -47,7 +47,12 @@ function serviceWeather(city, days) {
         lang: "en",
     });
 
-fetch(`${BASE_URL}${END_POINT}?${params}`)
+    fetch(`${BASE_URL}${END_POINT}?${params}`)
+        .then(resp => {
+            if (!resp.ok) {
+        throw new Error(resp.statusText)
+    }
+})
 
 }
 
