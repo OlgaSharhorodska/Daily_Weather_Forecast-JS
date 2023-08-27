@@ -1,5 +1,7 @@
 body{
-    background-color: #408697;
+    background-image:url(./clouds_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family:'Open Sans', sans-serif;
     
 }
@@ -21,6 +23,7 @@ body{
 .label {
     font-size: 22px;
     margin-bottom: 5px;
+    
 }
 
 .search-input,
@@ -70,13 +73,14 @@ body{
 }
 
 .weather-card {
-    background-color: #a6a5a3;
+    background-color:rgba(182, 186, 200, 0.3);
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
     text-align: center;
     flex: 1;
     margin: 0 10px;
+    
 }
 
 .weather-icon {
@@ -87,13 +91,13 @@ body{
 
 .date {
     font-size: 18px;
-    color: #333;
+    color: #ff6600;
     margin-bottom: 5px;
 }
 
 .weather-text {
     font-size: 16px;
-    color: #666;
+    color: #515050;
     margin-bottom: 5px;
 }
 
