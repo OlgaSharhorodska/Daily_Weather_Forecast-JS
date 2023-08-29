@@ -1,5 +1,5 @@
 body{
-    background-image:url(./clouds_bg.jpg);
+    background-image:url(./gorod_vid_sverhu_doroga_156925_1440x900.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     font-family:'Open Sans', sans-serif;
@@ -73,7 +73,7 @@ body{
 }
 
 .weather-card {
-    background-color:rgba(182, 186, 200, 0.3);
+    background-color:rgba(87, 86, 85, 0.4);
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
@@ -97,7 +97,7 @@ body{
 
 .weather-text {
     font-size: 16px;
-    color: #515050;
+    color: #fff;
     margin-bottom: 5px;
 }
 
